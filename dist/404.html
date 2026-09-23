@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noir Estate — Redirecting…</title>
+    <script>
+      // Static-host fallback (e.g. GitHub Pages): a refresh on /listings or
+      // /property/:id serves this file instead of index.html. Persist the
+      // attempted route, then hand back to the app which restores it on load.
+      (function () {
+        try {
+          var path = (window.location.pathname || "/").replace(/\/+$/, "") || "/";
+          var match = path.match(/^\/property\/(\d+)$/);
+          if (match) {
+            sessionStorage.setItem("noir-route", JSON.stringify({ view: "detail", id: parseInt(match[1], 10) }));
+          } else if (path === "/listings") {
+            sessionStorage.setItem("noir-route", JSON.stringify({ view: "listings", id: 1 }));
+          }
+        } catch (e) {
+          /* storage unavailable — fall through to index */
+        }
+        window.location.replace("/");
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to Noir Estate…</p>
+  </body>
+</html>
