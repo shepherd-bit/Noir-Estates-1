@@ -58,13 +58,13 @@ export default function FiltersSidebar({
       variants={slideFromLeft}
       initial="hidden"
       animate="show"
-      className="rounded-[28px] bg-white border border-[#0A0A0A]/[0.06] shadow-[0_10px_40px_-20px_rgba(0,0,0,0.15)] p-6"
+      className="rounded-[1.75rem] bg-white border border-[#0A0A0A]/[0.06] shadow-[0_0.625rem_2.5rem_-1.25rem_rgba(0,0,0,0.15)] p-6"
     >
       <div className="flex items-center justify-between mb-6">
-        <div className="text-[13px] font-[700] tracking-[0.08em]">FILTERS</div>
+        <div className="text-[0.8125rem] font-[700] tracking-[0.08em]">FILTERS</div>
         <button
           onClick={onClear}
-          className="text-[11px] font-[600] tracking-[0.06em] px-3 h-7 rounded-full bg-[#F7F5F2] hover:bg-[#E8E2DB] transition"
+          className="tap text-[0.6875rem] font-[600] tracking-[0.06em] px-3 h-7 rounded-full bg-[#F7F5F2] hover:bg-[#E8E2DB] transition"
         >
           CLEAR ALL
         </button>
@@ -72,10 +72,10 @@ export default function FiltersSidebar({
 
       <div className="space-y-8">
         <div>
-          <div className="text-[11px] tracking-[0.14em] font-[700] opacity-40 mb-3">LOCATION</div>
+          <div className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40 mb-3">LOCATION</div>
           <div className="space-y-2.5">
             {LOCATIONS.map((c) => (
-              <label key={c} className="flex items-center gap-3 text-[13px] font-[500] cursor-pointer group">
+              <label key={c} className="flex items-center gap-3 text-[0.8125rem] font-[500] cursor-pointer group">
                 <input
                   type="checkbox"
                   checked={filters.locations.includes(c)}
@@ -86,7 +86,7 @@ export default function FiltersSidebar({
                         : filters.locations.filter((x) => x !== c),
                     );
                   }}
-                  className="w-[18px] h-[18px] rounded-[6px] accent-[#0A0A0A]"
+                  className="w-[1.125rem] h-[1.125rem] rounded-[0.375rem] accent-[#0A0A0A]"
                 />
                 <span className="group-hover:opacity-70">{c}</span>
               </label>
@@ -96,8 +96,8 @@ export default function FiltersSidebar({
 
         <div>
           <div className="flex justify-between items-center mb-3">
-            <span className="text-[11px] tracking-[0.14em] font-[700] opacity-40">PRICE RANGE</span>
-            <span className="text-[11px] font-[700] px-2 py-1 rounded-full bg-[#F7F5F2]">
+            <span className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40">PRICE RANGE</span>
+            <span className="text-[0.6875rem] font-[700] px-2 py-1 rounded-full bg-[#F7F5F2]">
               {formatPrice(filters.price[0])} — {formatPrice(filters.price[1])}
             </span>
           </div>
@@ -124,13 +124,13 @@ export default function FiltersSidebar({
         </div>
 
         <div>
-          <div className="text-[11px] tracking-[0.14em] font-[700] opacity-40 mb-3">PROPERTY TYPE</div>
+          <div className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40 mb-3">PROPERTY TYPE</div>
           <div className="flex gap-2 flex-wrap">
             {["apartment", "villa", "land"].map((c) => (
               <button
                 key={c}
                 onClick={() => setTypes((prev) => toggleInList(prev, c))}
-                className={`px-4 h-[36px] rounded-full text-[12px] font-[600] capitalize border transition ${
+                className={`tap px-4 h-[2.25rem] rounded-full text-[0.75rem] font-[600] capitalize border transition ${
                   filters.types.includes(c)
                     ? "bg-[#0A0A0A] text-white border-[#0A0A0A]"
                     : "bg-[#F7F5F2] border-transparent hover:bg-[#E8E2DB]"
@@ -144,36 +144,36 @@ export default function FiltersSidebar({
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <div className="text-[11px] tracking-[0.14em] font-[700] opacity-40 mb-3">BEDROOMS</div>
+            <div className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40 mb-3">BEDROOMS</div>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setBeds(Math.max(0, filters.beds - 1))}
-                className="w-8 h-8 rounded-full bg-[#F7F5F2] font-[700]"
+                className="tap w-8 h-8 rounded-full bg-[#F7F5F2] font-[700]"
               >
                 −
               </button>
-              <span className="w-8 text-center font-[700] text-[14px]">{filters.beds}</span>
+              <span className="w-8 text-center font-[700] text-[0.875rem]">{filters.beds}</span>
               <button
                 onClick={() => setBeds(Math.min(6, filters.beds + 1))}
-                className="w-8 h-8 rounded-full bg-[#0A0A0A] text-white font-[700]"
+                className="tap w-8 h-8 rounded-full bg-[#0A0A0A] text-white font-[700]"
               >
                 +
               </button>
             </div>
           </div>
           <div>
-            <div className="text-[11px] tracking-[0.14em] font-[700] opacity-40 mb-3">BATHROOMS</div>
+            <div className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40 mb-3">BATHROOMS</div>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setBaths(Math.max(0, filters.baths - 1))}
-                className="w-8 h-8 rounded-full bg-[#F7F5F2] font-[700]"
+                className="tap w-8 h-8 rounded-full bg-[#F7F5F2] font-[700]"
               >
                 −
               </button>
-              <span className="w-8 text-center font-[700] text-[14px]">{filters.baths}</span>
+              <span className="w-8 text-center font-[700] text-[0.875rem]">{filters.baths}</span>
               <button
                 onClick={() => setBaths(Math.min(6, filters.baths + 1))}
-                className="w-8 h-8 rounded-full bg-[#0A0A0A] text-white font-[700]"
+                className="tap w-8 h-8 rounded-full bg-[#0A0A0A] text-white font-[700]"
               >
                 +
               </button>
@@ -183,8 +183,8 @@ export default function FiltersSidebar({
 
         <div>
           <div className="flex justify-between mb-3">
-            <span className="text-[11px] tracking-[0.14em] font-[700] opacity-40">SQUARE FOOTAGE</span>
-            <span className="text-[11px] font-[700]">
+            <span className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40">SQUARE FOOTAGE</span>
+            <span className="text-[0.6875rem] font-[700]">
               {filters.sqft[0].toLocaleString()} — {filters.sqft[1].toLocaleString()} ft²
             </span>
           </div>
@@ -209,13 +209,13 @@ export default function FiltersSidebar({
         </div>
 
         <div>
-          <div className="text-[11px] tracking-[0.14em] font-[700] opacity-40 mb-3">AMENITIES</div>
+          <div className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40 mb-3">AMENITIES</div>
           <div className="flex flex-wrap gap-2">
             {AMENITIES.map((c) => (
               <button
                 key={c}
                 onClick={() => setAmenities((prev) => toggleInList(prev, c))}
-                className={`px-3 h-[30px] rounded-full text-[11px] font-[600] border transition ${
+                className={`tap px-3 h-[1.875rem] rounded-full text-[0.6875rem] font-[600] border transition ${
                   filters.amenities.includes(c)
                     ? "bg-[#3D4A3C] text-white border-[#3D4A3C]"
                     : "bg-[#F7F5F2] border-transparent hover:bg-[#E8E2DB]"
@@ -229,8 +229,8 @@ export default function FiltersSidebar({
 
         <div>
           <div className="flex justify-between mb-3">
-            <span className="text-[11px] tracking-[0.14em] font-[700] opacity-40">YEAR BUILT</span>
-            <span className="text-[11px] font-[700]">
+            <span className="text-[0.6875rem] tracking-[0.14em] font-[700] opacity-40">YEAR BUILT</span>
+            <span className="text-[0.6875rem] font-[700]">
               {filters.years[0]} — {filters.years[1]}
             </span>
           </div>

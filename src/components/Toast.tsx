@@ -11,7 +11,7 @@ export default function Toast({ message }: { message: string | null }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="pointer-events-auto px-5 h-11 rounded-full bg-[#0A0A0A] text-white text-[12px] font-[600] tracking-[0.04em] flex items-center shadow-[0_12px_30px_rgba(0,0,0,0.3)]"
+            className="pointer-events-auto px-5 h-11 rounded-full bg-[#0A0A0A] text-white text-[0.75rem] font-[600] tracking-[0.04em] flex items-center shadow-[0_0.75rem_1.875rem_rgba(0,0,0,0.3)]"
           >
             {message}
           </motion.div>

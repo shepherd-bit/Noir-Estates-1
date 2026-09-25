@@ -283,7 +283,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F7F5F2] text-[#0A0A0A] antialiased selection:bg-[#C96A4A] selection:text-white pt-[72px]">
+    <div className="min-h-screen bg-[#F7F5F2] text-[#0A0A0A] antialiased selection:bg-[#C96A4A] selection:text-white pt-[4.5rem]">
       <Toast message={toast} />
       <Navbar view={view} onNavigate={navigate} onResetFilters={clearAll} />
 
@@ -295,7 +295,7 @@ export default function App() {
           initial="hidden"
           animate="show"
           exit="exit"
-          className="mx-auto max-w-[1440px] px-6 md:px-10 overflow-hidden"
+          className="mx-auto max-w-[90rem] px-6 md:px-10 overflow-hidden"
         >
           <Hero hero={PROPERTIES[0]} isSaved={saved.has(1)} onToggleSave={toggleSave} />
           <CuratedSection

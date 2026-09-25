@@ -21,8 +21,8 @@ export default function CuratedSection({ items, saved, onToggleSave, onOpen, onV
     >
       <motion.div variants={fadeUp} className="mb-10">
         <div>
-          <div className="text-[11px] tracking-[0.18em] font-[700] opacity-40 mb-3">LATEST LISTINGS</div>
-          <h2 className="text-[44px] md:text-[64px] font-[800] tracking-[-0.05em] leading-[0.9]">
+          <div className="text-[0.6875rem] tracking-[0.18em] font-[700] opacity-40 mb-3">LATEST LISTINGS</div>
+          <h2 className="text-[2.75rem] md:text-[4rem] font-[800] tracking-[-0.05em] leading-[0.9]">
             Explore for
             <br />
             your taste.
@@ -30,12 +30,12 @@ export default function CuratedSection({ items, saved, onToggleSave, onOpen, onV
         </div>
       </motion.div>
 
-      <motion.div variants={staggerParent} className="grid md:grid-cols-12 gap-6 auto-rows-[380px] md:auto-rows-[420px]">
+      <motion.div variants={staggerParent} className="grid md:grid-cols-12 gap-6 auto-rows-[23.75rem] md:auto-rows-[26.25rem]">
         {items.map((c, idx) => (
           <motion.div
             key={c.id}
             variants={fadeUp}
-            className={`group relative text-left rounded-[32px] overflow-hidden bg-[#E8E2DB] shadow-[0_10px_30px_-16px_rgba(0,0,0,0.25)] hover:shadow-[0_30px_60px_-24px_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-500 ${
+            className={`group relative text-left rounded-[2rem] overflow-hidden bg-[#E8E2DB] shadow-[0_0.625rem_1.875rem_-1rem_rgba(0,0,0,0.25)] hover:shadow-[0_1.875rem_3.75rem_-1.5rem_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-500 ${
               idx === 0
                 ? "md:col-span-7"
                 : idx === 1
@@ -58,16 +58,16 @@ export default function CuratedSection({ items, saved, onToggleSave, onOpen, onV
             </button>
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
             <div className="absolute top-5 left-5 flex items-center gap-2 pointer-events-none">
-              <div className="px-3 py-1.5 rounded-full bg-white text-[#0A0A0A] text-[11px] font-[800] tracking-[0.04em]">
+              <div className="px-3 py-1.5 rounded-full bg-white text-[#0A0A0A] text-[0.6875rem] font-[800] tracking-[0.04em]">
                 {formatPrice(c.price)}
               </div>
-              <div className="px-3 py-1.5 rounded-full bg-white/15 backdrop-blur text-white border border-white/20 text-[10px] tracking-[0.1em] font-[600] uppercase">
+              <div className="px-3 py-1.5 rounded-full bg-white/15 backdrop-blur text-white border border-white/20 text-[0.625rem] tracking-[0.1em] font-[600] uppercase">
                 {c.type}
               </div>
             </div>
             <button
               onClick={(e) => onToggleSave(c.id, e)}
-              className={`absolute top-5 right-5 z-10 w-9 h-9 rounded-full backdrop-blur border flex items-center justify-center transition ${
+              className={`tap absolute top-5 right-5 z-10 w-9 h-9 rounded-full backdrop-blur border flex items-center justify-center transition ${
                 saved.has(c.id)
                   ? "bg-white text-black border-white"
                   : "bg-white/15 border-white/20 text-white hover:bg-white hover:text-black"
@@ -76,13 +76,13 @@ export default function CuratedSection({ items, saved, onToggleSave, onOpen, onV
               {saved.has(c.id) ? "♥" : "♡"}
             </button>
             <div className="absolute bottom-0 left-0 right-0 p-7 text-white pointer-events-none">
-              <div className="flex items-center gap-2 text-[11px] tracking-[0.08em] opacity-80">
+              <div className="flex items-center gap-2 text-[0.6875rem] tracking-[0.08em] opacity-80">
                 <span>{c.location.toUpperCase()}</span>
                 <span>•</span>
                 <span>{c.coordinates}</span>
               </div>
-              <h3 className="mt-2 text-[28px] font-[700] tracking-[-0.03em] leading-[0.95]">{c.title}</h3>
-              <div className="mt-4 flex items-center gap-4 text-[12px] font-[500]">
+              <h3 className="mt-2 text-[1.75rem] font-[700] tracking-[-0.03em] leading-[0.95]">{c.title}</h3>
+              <div className="mt-4 flex items-center gap-4 text-[0.75rem] font-[500]">
                 <span className="flex items-center gap-1.5">
                   <span className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center">◫</span>
                   {c.beds || "—"} bd
@@ -104,7 +104,7 @@ export default function CuratedSection({ items, saved, onToggleSave, onOpen, onV
       <motion.div variants={fadeUp} className="mt-12 flex justify-center">
         <button
           onClick={onViewAll}
-          className="group h-[56px] px-8 rounded-full bg-[#0A0A0A] text-[#F7F5F2] text-[13px] tracking-[0.08em] font-[700] flex items-center gap-3 hover:bg-black hover:gap-5 transition-all"
+          className="group h-[3.5rem] px-8 rounded-full bg-[#0A0A0A] text-[#F7F5F2] text-[0.8125rem] tracking-[0.08em] font-[700] flex items-center gap-3 hover:bg-black hover:gap-5 transition-all"
         >
           VIEW ALL LISTINGS — 12 PROPERTIES{" "}
           <span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:rotate-45 transition-transform">
